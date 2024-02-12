@@ -1,0 +1,13 @@
+<!DOCTYPE html><html>	
+<script>
+    var userLanguage = navigator.language || navigator.userLanguage;
+    var queryString = window.location.href.split('?q=')[1];
+    queryString = decodeURIComponent(queryString || '').replace(/\+/g, '%20')
+    // Проверяем предпочитаемый язык пользователя
+    if (userLanguage.startsWith("ru")) {
+        window.location.href = "ru/?q=" + queryString;
+    } else if (userLanguage.startsWith("en")) {
+        window.location.href = "en/?q=" + queryString;
+    }
+</script>
+</html>
